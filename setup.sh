@@ -47,20 +47,20 @@ sudo apt-get install openssl -y
 
 
 
-# echo "
-#  ____________________________________
-# |                                    |
-# |              MONGO DB              |
-#  ____________________________________
-# "
-# echo " *** ADD MONGO DB *** "
-# sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
-# echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
-#
-# echo " *** UPDATE *** "
-# sudo apt-get update
-# echo " *** INSTALL MONGO DB *** "
-# sudo apt-get install -y mongodb-org
+echo "
+  ____________________________________
+ |                                    |
+ |              MONGO DB              |
+  ____________________________________
+ "
+ echo " *** ADD MONGO DB *** "
+ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+
+ echo " *** UPDATE *** "
+ sudo apt-get update
+ echo " *** INSTALL MONGO DB *** "
+ sudo apt-get install -y mongodb-org
 
 
 echo "
