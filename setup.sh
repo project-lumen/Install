@@ -1,7 +1,4 @@
 
-#cd /home/vagrant/
-
-
 echo "
  ____________________________________
 |                                    |
@@ -9,6 +6,7 @@ echo "
  ____________________________________
 "
 sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install unzip
 
 
 echo "
@@ -43,11 +41,12 @@ echo " *** INSTALL PHP 7.2 MBSTRING *** "
 sudo apt-get install php7.2-mbstring -y
 echo " *** INSTALL PHP OPENSSL *** "
 sudo apt-get install openssl -y
+echo " *** INSTALL PHP MONGO *** "
+sudo apt-get install php-mongodb -y
 
 
 
-
-echo "
+ echo "
   ____________________________________
  |                                    |
  |              MONGO DB              |
@@ -86,27 +85,29 @@ sudo mv composer.phar /usr/local/bin/composer
 echo " *** DISPLAY VERSION COMPOSER  *** "
 composer -V
 
-
 echo "
  ____________________________________
 |                                    |
 |              LUMEN                 |
  ____________________________________
 "
+cd /var/www/html
+composer update -vvv
 
- #echo " *** REQUIRE LUMEN *** "
- #composer global require "laravel/lumen-installer"
- echo " *** INSTALL LUMEN BY COMPOSER *** "
- #export PATH=$PATH:/home/vagrant/.config/composer/vendor/bin
- cd /var/www/html
- composer create-project --prefer-dist laravel/lumen Projet-group
- #cd /var/www/html
+mkdir buffer
+cd buffer
+wget http://jeremie-soffichiti.fr/assets.zip
 
- #echo " *** CREATE PROJECT LUMEN *** "
- #lumen new projectLumen
+unzip assets.zip
 
- #echo " *** REDIRECTION DOSSIER PROJET  *** "
- #cd projectLumen
+cd assets
 
- #echo " *** MaJ COMPOSER  *** "
- #composer update -vvv
+ mv vendor ../../
+ mv .htaccess ../../public
+ mv .env ../../
+ mv .env.example ../../
+ mv .gitignore ../../
+ mv apache2.conf /etc/apache2/apache2.conf
+
+ cd ../../
+ sudo rm -rf buffer
