@@ -1,76 +1,14 @@
-########################### MAIN MENU ##############################
-    # ####### Installation Virtual box #######
-    #  read -p "
-    # _______________________________________________________________
-    # | Menu :                                                        |
-    # | 1 - Installer Virtual box                                     |
-    # | 2 - Ne pas installer virtual box                              |
-    # _______________________________________________________________
-    # " menu;
-    # if [[ $menu -eq 1 ]]
-    # then
-    #         ####### Votre OS #######
-    #          read -p "
-    #         _______________________________________________________________
-    #         | Menu :                                                        |
-    #         | 1 - MAC                                                       |
-    #         | 2 - Linux apt                                                 |
-    #         _______________________________________________________________
-    #         " menu;
-    #         if [[ $menu -eq 1 ]]
-    #         then
-    #           wget https://download.virtualbox.org/virtualbox/5.2.6/VirtualBox-5.2.6-120293-OSX.dmg
-    #         elif [[ $menu -eq 2 ]]
-    #         then
-    #           sudo apt install -y virtualbox-qt
-    #         else
-    #          echo "Saisie incorrect";
-    #        fi
-    # elif [[ $menu -eq 2 ]]
-    # then
-    #  echo "Non installer";
-    # else
-    #  echo "Saisie incorrect";
-    # fi
-    #
-    #
-    # ####### Installation Vagrant #######
-    #  read -p "
-    # _______________________________________________________________
-    # | Menu :                                                        |
-    # | 1 - Installer Vagrant                                         |
-    # | 2 - Ne pas installer Vagrant                                  |
-    # _______________________________________________________________
-    # " menu;
-    # if [[ $menu -eq 1 ]]
-    # then
-    #       ####### Votre OS #######
-    #        read -p "
-    #       _______________________________________________________________
-    #       | Menu :                                                        |
-    #       | 1 - MAC                                                       |
-    #       | 2 - Linux apt                                                 |
-    #       _______________________________________________________________
-    #       " menu;
-    #       if [[ $menu -eq 1 ]]
-    #       then
-    #         wget https://releases.hashicorp.com/vagrant/2.0.2/vagrant_2.0.2_x86_64.dmg
-    #       elif [[ $menu -eq 2 ]]
-    #       then
-    #         sudo apt install -y vagrant
-    #       else
-    #        echo "Saisie incorrect";
-    #      fi
-    # elif [[ $menu -eq 2 ]]
-    # then
-    #   echo "Non installer";
-    # else
-    #  echo "Saisie incorrect";
-    # fi
-    #
+#!/bin/bash
+# ------------------------------------------------------------------
+# [Adrien Fevre, Jeremie Sophikitis, Victor Anton]
+# install.sh
+# - Recupération des dossiers back & front
+# - Genere un fichier Vagrantfile avec provisionning -> setup.sh
+# -----------------------------------------------------------------
 
 
-  #### VERIF DOSSIER project  ####
+
+#### VERIF DOSSIER project  ####
   if [ ! -d back-lumen ];
   then
     ####### Clone reppo #######
