@@ -88,11 +88,13 @@ composer -V
 echo "
  ____________________________________
 |                                    |
-|              LUMEN                 |
+|           Init projet              |
  ____________________________________
 "
 cd /var/www/html
 composer update -vvv
+
+
 
 mkdir buffer
 cd buffer
@@ -102,12 +104,18 @@ unzip assets.zip
 
 cd assets
 
- mv vendor ../../
- mv .htaccess ../../public
- mv .env ../../
- mv .env.example ../../
- mv .gitignore ../../
- mv apache2.conf /etc/apache2/apache2.conf
+ mv -f vendor ../../
+ mv -f .htaccess ../../public
+ mv -f .env ../../
+ mv -f .env.example ../../
+ mv -f .gitignore ../../
+ mv -f apache2.conf /etc/apache2/apache2.conf
+ mv -f 000-default.conf /etc/apache2/sites-enables/000-default.conf
+
+
+sudo a2enmod rewrite
+sudo /etc/init.d/apache2 reload
+sudo service apache2 restart
 
  cd ../../
- sudo rm -rf buffer
+ rm -rf buffer
