@@ -124,7 +124,7 @@ cd assets
  mv -f .env.example ../../
  mv -f .gitignore ../../
  mv -f apache2.conf /etc/apache2/apache2.conf
- mv -f 000-default.conf /etc/apache2/sites-enables/000-default.conf
+ mv -f 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 # On active le mode Rewrite
 sudo a2enmod rewrite
