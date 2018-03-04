@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20240\viewh6780\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf2 \cb3 \CocoaLigature0 Mongo command usefull : \
+\
+\
+
+\fs22 #Demarrer mongo\
+
+\f1\b0 sudo service mongod start\
+\
+\
+
+\f0\b #Creation admin \
+
+\f1\b0 use admin\
+db.createUser(\{ user: "admin", pwd: "admin", roles: [ "userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"] \} )\
+\
+
+\f0\b #creation d'une collection avec insertion de donn\'e9es\
+
+\f1\b0 Use bddtodo\
+db.users.insert(\{coucou: "hello"\})\
+\
+
+\f0\b #Export BDD\
+
+\f1\b0 mongodump --out /data/backup/\
+\
+
+\f0\b #Import BDD\
+
+\f1\b0 mongorestore --port 27017 ./data/backup/\
+\
+\
+}
