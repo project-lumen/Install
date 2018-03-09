@@ -58,7 +58,7 @@
         echo "OK"
       elif [[ $menu -eq 2 ]]
       then
-        git clone -b develop https://github.com/project-lumen/front-electron.git
+        git clone -b dev https://github.com/project-lumen/front-electron.git
         echo "OK"
       else
        echo "Saisie incorrecte";
